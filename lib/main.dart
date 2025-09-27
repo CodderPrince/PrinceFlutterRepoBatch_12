@@ -96,61 +96,63 @@ class _ContactListPageState extends State<ContactListPage> {
       ),
       body: Column(
         children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              children: <Widget>[
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(color: Colors.grey.shade400),
-                    borderRadius: BorderRadius.circular(4.0),
-                  ),
-                  child: TextField(
-                    controller: _nameController,
-                    decoration: const InputDecoration(
-                      hintText: 'Name',
-                      contentPadding: EdgeInsets.symmetric(horizontal: 12.0),
-                      border: InputBorder.none,
+          SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(color: Colors.grey.shade400),
+                      borderRadius: BorderRadius.circular(4.0),
                     ),
-                  ),
-                ),
-                const SizedBox(height: 8.0),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(color: Colors.grey.shade400),
-                    borderRadius: BorderRadius.circular(4.0),
-                  ),
-                  child: TextField(
-                    controller: _numberController,
-                    keyboardType: TextInputType.phone,
-                    decoration: const InputDecoration(
-                      hintText: 'Number',
-                      contentPadding: EdgeInsets.symmetric(horizontal: 12.0),
-                      border: InputBorder.none,
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 16.0),
-                SizedBox(
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    onPressed: _addContact,
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFF425B6C),
-                      padding: const EdgeInsets.symmetric(vertical: 12.0),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(4.0),
+                    child: TextField(
+                      controller: _nameController,
+                      decoration: const InputDecoration(
+                        hintText: 'Name',
+                        contentPadding: EdgeInsets.symmetric(horizontal: 12.0),
+                        border: InputBorder.none,
                       ),
                     ),
-                    child: const Text(
-                      'Add',
-                      style: TextStyle(color: Colors.white, fontSize: 16.0),
+                  ),
+                  const SizedBox(height: 8.0),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(color: Colors.grey.shade400),
+                      borderRadius: BorderRadius.circular(4.0),
+                    ),
+                    child: TextField(
+                      controller: _numberController,
+                      keyboardType: TextInputType.phone,
+                      decoration: const InputDecoration(
+                        hintText: 'Number',
+                        contentPadding: EdgeInsets.symmetric(horizontal: 12.0),
+                        border: InputBorder.none,
+                      ),
                     ),
                   ),
-                ),
-              ],
+                  const SizedBox(height: 16.0),
+                  SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      onPressed: _addContact,
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xFF425B6C),
+                        padding: const EdgeInsets.symmetric(vertical: 12.0),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(4.0),
+                        ),
+                      ),
+                      child: const Text(
+                        'Add',
+                        style: TextStyle(color: Colors.white, fontSize: 16.0),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
           Expanded(
